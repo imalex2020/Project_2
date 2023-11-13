@@ -26,8 +26,50 @@ cd Project_2
 ```bash
 npm install
 ```
+## Cypress Configuration
 
-## Configuration
+The `cypress/config.js` file contains the configuration settings for Cypress tests in this project. Below are some key configurations used in this setup:
+
+- `viewportHeight` and `viewportWidth`: Sets the default height and width of the viewport for tests.
+
+- `chromeWebSecurity`: Disables Chrome web security. Useful when testing on environments with different origins.
+
+- `env`: Defines environment variables that can be accessed during test execution. In this case, it sets the `SITE_URL` variable to 'https://techglobal-training.com'.
+
+- `e2e`: Specifies configurations related to end-to-end (e2e) testing:
+
+  - `setupNodeEvents`: Allows setting up custom node event listeners if needed.
+
+  - `specPattern`: Defines the pattern for locating e2e test files. It looks for files with the extension `.cy.js`, `.cy.jsx`, `.cy.ts`, or `.cy.tsx` in the `cypress/e2e/projects/` directory.
+
+### Usage
+
+To modify or extend the Cypress configuration, edit the `cypress/config.js` file according to your project's requirements.
+
+
+```javascript
+// cypress/config.js
+
+const { defineConfig } = require("cypress");
+
+module.exports = defineConfig({
+  viewportHeight: 1000,
+  viewportWidth: 1980,
+  chromeWebSecurity: false,
+  // retries: 2,
+  env: {
+    SITE_URL: 'https://techglobal-training.com'
+  },
+  e2e: {
+    setupNodeEvents(on, config) {
+      // implement node event listeners here
+    },
+    specPattern: 'cypress/e2e/projects/*.cy.{js,jsx,ts,tsx}',
+  },
+});
+```
+
+## Configuration example.json
 Before running the tests, make sure to set up the configuration file `example.json`. This file contains essential data required for test execution. Follow the steps below:
 
 1. Create a file named `example.json` in the `cypress/fixtures` directory.
