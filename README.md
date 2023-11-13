@@ -15,12 +15,12 @@ Before running the test cases, make sure you have the following:
 1. Clone this repository:
 
 ```bash
-git clone <repository-url>
+git clone git@github.com:imalex2020/Project_2.git
 ```
 2. Navigate to the project folder:
 
 ```bash
-cd <project-folder>
+cd Project_2
 ```
 3.Install dependencies:
 ```bash
@@ -88,6 +88,10 @@ loginPage.getLogoutButton().click();
 To run the Cypress tests, use the following command:
 ```bash
 npm test
+```
+or run with a browser (Chrome preffered)
+```bash
+npm cypress open
 ```
 
 
