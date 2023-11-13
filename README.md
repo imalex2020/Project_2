@@ -129,7 +129,7 @@ loginPage.getLogoutButton().click();
 ## Running the Tests
 To run the Cypress tests, use the following command:
 ```bash
-npm test
+npm cypress run
 ```
 or run with a browser (Chrome preffered)
 ```bash
